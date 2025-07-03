@@ -1,1 +1,2 @@
-$Path = $env:TEMP; $Installer = "Anydesk.exe"; $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest "https://download.anydesk.com/AnyDesk.exe" -OutFile $Path\$Installer; Start-Process -FilePath $Path\$Installer -Args "/y /silent /install" -Verb RunAs -Wait; Remove-Item $Path\$Installer 
+$Path = "$($env:USERPROFILE)\Downloads"; $Installer = "AnyDesk.exe"; $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest "https://download.anydesk.com/AnyDesk.exe" -OutFile $Path\$Installer;
+start $Path\AnyDesk.exe
